@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keel — Quickstart</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0b0d;--bg-2:#0f1114;--surface:#14161b;--surface-2:#181b21;
+    --line:#23262e;--line-soft:#1a1d23;--text:#ece9e3;--muted:#8f939c;
+    --muted-2:#5f636c;--accent:#ff6a3d;--accent-soft:rgba(255,106,61,.14);
+    --good:#46c08a;--maxw:820px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(var(--line-soft) 1px,transparent 1px),linear-gradient(90deg,var(--line-soft) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 90% 70% at 50% 0%,#000 35%,transparent 80%);opacity:.5}
+  .wrap{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .mono{font-family:'IBM Plex Mono',monospace}
+  .kicker{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:500}
+  a{color:inherit}
+
+  nav{position:relative;z-index:3;display:flex;align-items:center;justify-content:space-between;max-width:1120px;margin:0 auto;padding:26px 28px}
+  .brand{display:flex;align-items:center;gap:11px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:21px;letter-spacing:-.02em}
+  .keel-mark{width:26px;height:26px;flex:none}
+  .nav-links{display:flex;gap:26px;align-items:center}
+  .nav-links a{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--muted);text-decoration:none;transition:color .2s}
+  .nav-links a:hover{color:var(--text)}
+  .nav-cta{color:var(--bg)!important;background:var(--text);padding:9px 16px;border-radius:7px;font-weight:600;transition:transform .15s,background .2s}
+  .nav-cta:hover{transform:translateY(-1px);background:#fff}
+
+  header{padding:64px 0 30px}
+  h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(34px,5.4vw,58px);line-height:1.04;letter-spacing:-.035em;margin:18px 0 0}
+  h1 .hot{color:var(--accent)}
+  .lede{font-size:clamp(17px,2vw,20px);color:var(--muted);margin-top:22px;max-width:640px}
+  .lede b{color:var(--text);font-weight:600}
+
+  .need{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:40px 0 10px}
+  @media(max-width:640px){.need{grid-template-columns:1fr}}
+  .need-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 24px}
+  .need-card .n-lbl{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+  .need-card h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:19px;margin:10px 0 6px;letter-spacing:-.01em}
+  .need-card p{color:var(--muted);font-size:14.5px}
+
+  section{padding:44px 0}
+  .sec-head{margin-bottom:30px}
+  .sec-head h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(25px,3.4vw,34px);letter-spacing:-.03em;margin-top:10px}
+  .sec-head p{color:var(--muted);margin-top:10px}
+
+  /* steps as a numbered vertical list */
+  .steps{position:relative;margin-left:6px}
+  .steps::before{content:"";position:absolute;left:19px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--line),transparent)}
+  .stp{position:relative;padding:0 0 30px 62px}
+  .stp:last-child{padding-bottom:0}
+  .stp .dot{position:absolute;left:0;top:-2px;width:40px;height:40px;border-radius:50%;background:var(--surface);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-weight:600;color:var(--accent);font-size:15px}
+  .stp h4{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;margin-bottom:6px}
+  .stp p{color:var(--muted);font-size:15px}
+  .stp .tip{display:block;margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--muted-2)}
+
+  /* worked example — chat mock */
+  .chat{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .chat-bar{display:flex;align-items:center;gap:9px;padding:14px 18px;border-bottom:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted)}
+  .tl{display:flex;gap:6px}.tl i{width:10px;height:10px;border-radius:50%;background:var(--line);display:block}
+  .chat-body{padding:22px 20px;display:flex;flex-direction:column;gap:16px}
+  .msg{max-width:82%;padding:13px 16px;border-radius:14px;font-size:14.5px;line-height:1.55}
+  .msg .who{display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;opacity:.7}
+  .from-you{align-self:flex-end;background:var(--accent);color:#1a0a04;border-bottom-right-radius:5px}
+  .from-you .who{color:#5c2410}
+  .from-keel{align-self:flex-start;background:var(--surface-2);border:1px solid var(--line);border-bottom-left-radius:5px}
+  .from-keel .who{color:var(--accent)}
+  .msg.build{align-self:flex-start;background:transparent;border:1px dashed var(--line);color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:12.5px;max-width:100%}
+
+  .ideas{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+  .chip{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:9px 15px;font-size:13.5px;color:var(--text)}
+  .chip span{color:var(--muted-2)}
+
+  details{border-bottom:1px solid var(--line);padding:18px 0}
+  details summary{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:17px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px}
+  details summary::-webkit-details-marker{display:none}
+  details summary::after{content:"+";color:var(--accent);font-family:'IBM Plex Mono',monospace;font-size:20px;line-height:1}
+  details[open] summary::after{content:"–"}
+  details p{color:var(--muted);margin-top:11px;font-size:15px}
+
+  .closer{text-align:center;padding:70px 0 30px}
+  .closer h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,4.4vw,44px);letter-spacing:-.035em;line-height:1.06}
+  .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+  .btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#1a0a04;font-weight:600;font-size:16px;padding:15px 26px;border-radius:9px;text-decoration:none;box-shadow:0 8px 30px -8px var(--accent);transition:transform .15s,box-shadow .2s}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 38px -8px var(--accent)}
+  .btn-primary .px{font-family:'IBM Plex Mono',monospace;opacity:.7;font-size:14px}
+  .btn-ghost{display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--text);text-decoration:none;padding:14px 6px;border-bottom:1px solid var(--line);transition:border-color .2s,gap .2s}
+  .btn-ghost:hover{border-color:var(--accent);gap:12px}
+
+  footer{border-top:1px solid var(--line);margin-top:40px;padding:32px 0;color:var(--muted-2)}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-family:'IBM Plex Mono',monospace;font-size:12.5px}
+  footer a{color:var(--muted);text-decoration:none}
+  footer a:hover{color:var(--text)}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="keel-landing.html" class="brand" style="text-decoration:none">
+    <svg class="keel-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 2 L28 9 L28 18 C28 25 22 29 16 31 C10 29 4 25 4 18 L4 9 Z" stroke="#ff6a3d" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M16 8 L16 31 M9 12 L16 16 L23 12" stroke="#ece9e3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Keel
+  </a>
+  <div class="nav-links">
+    <a href="keel-landing.html">← Home</a>
+    <a href="keel-landing.html#get" class="nav-cta">Download free</a>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <div class="kicker">Quickstart</div>
+    <h1>Build your idea. <span class="hot">No coding required.</span></h1>
+    <p class="lede">You bring an idea and an AI assistant. Keel does the rest — it plans your app with you in plain language, builds it, checks it works, and hands it back finished. <b>Here's exactly how, start to finish.</b></p>
+    <div class="need">
+      <div class="need-card"><div class="n-lbl">You need this</div><h3>An idea</h3><p>Described in plain words. Like: "a website where people track how much water they drink each day."</p></div>
+      <div class="need-card"><div class="n-lbl">And this</div><h3>An AI assistant</h3><p>Claude Code, Cursor, or Antigravity — any one works. That's the only tool to install.</p></div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal"><div class="kicker">The steps</div><h2>Five simple steps.</h2></div>
+    <div class="steps reveal">
+      <div class="stp"><div class="dot">1</div><h4>Get Keel</h4><p>Download Keel — it's a free folder of files. Think of it like a kitchen-in-a-box: the tools and the recipe card are already inside, ready to go.</p></div>
+      <div class="stp"><div class="dot">2</div><h4>Open it with your assistant</h4><p>Point your AI assistant at the Keel folder. You don't set anything up — the folder quietly tells the assistant all the house rules.</p><span class="tip">tip: just open the folder in Claude Code, Cursor, or Antigravity</span></div>
+      <div class="stp"><div class="dot">3</div><h4>Tell it your idea</h4><p>Type what you want in everyday words. No technical terms, no choosing tools or settings.</p></div>
+      <div class="stp"><div class="dot">4</div><h4>Confirm the plan</h4><p>The assistant repeats your idea back in plain language and waits. Say yes, or tweak it — this is your moment to steer. It never asks you anything technical.</p></div>
+      <div class="stp"><div class="dot">5</div><h4>Get your finished app</h4><p>Keel builds it, checks the main features actually work, and tells you exactly what to open or click. There's your app.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal"><div class="kicker">A real example</div><h2>What it actually looks like.</h2><p>Say you want a water-tracking app. Here's the whole conversation.</p></div>
+    <div class="chat reveal">
+      <div class="chat-bar"><span class="tl"><i></i><i></i><i></i></span> your AI assistant + Keel</div>
+      <div class="chat-body">
+        <div class="msg from-you"><span class="who">You</span>I want a website where people can track how much water they drink each day and see a chart of their week.</div>
+        <div class="msg from-keel"><span class="who">Keel</span>Got it. I'll build a site where people sign up, log how many glasses of water they drink each day, and see a chart of their week. Sound right?</div>
+        <div class="msg from-you"><span class="who">You</span>Yes — and let the chart show the last 7 days.</div>
+        <div class="msg build">Keel is building… setting up the site · adding sign-up · building the daily log · making the weekly chart · checking everything works ✓</div>
+        <div class="msg from-keel"><span class="who">Keel</span>All done and working. Open the link I started for you, sign up, add your glasses of water for today, and you'll see your 7-day chart fill in. Want me to change anything?</div>
+      </div>
+    </div>
+    <p class="lede" style="margin-top:22px;font-size:16px">Notice what you <b>didn't</b> have to do: pick a programming language, install anything beyond your assistant, or answer a single technical question. You described the idea; Keel handled everything else.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal"><div class="kicker">Not just water trackers</div><h2>It works for all kinds of ideas.</h2></div>
+    <div class="ideas reveal">
+      <div class="chip">A monthly budget tracker <span>· website</span></div>
+      <div class="chip">A recipe box for my family <span>· website</span></div>
+      <div class="chip">A simple booking form for my salon <span>· website</span></div>
+      <div class="chip">A tool that renames my photos by date <span>· small app</span></div>
+      <div class="chip">A habit checklist <span>· mobile app</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal"><div class="kicker">Good to know</div><h2>A few common questions.</h2></div>
+    <div class="reveal">
+      <details><summary>Do I need to know how to code?</summary><p>No. That's the whole point. You describe what you want in plain words; the assistant does the building. You never touch code or settings unless you want to.</p></details>
+      <details><summary>What if the app isn't quite what I meant?</summary><p>At step 4 the assistant shows you its plan before building — that's your chance to fix it. And after it's built, you can just say what you'd like changed, in plain words.</p></details>
+      <details><summary>What do I need to install?</summary><p>Only one AI coding assistant — Claude Code, Cursor, or Antigravity. Keel itself is just a folder you open with it.</p></details>
+      <details><summary>Is it really free?</summary><p>Yes. Use it for personal or commercial projects, no sign-up. If it saves you time, passing it to a friend is thanks enough.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="closer">
+  <div class="wrap">
+    <h2 class="reveal">That's it. Bring an idea.</h2>
+    <div class="cta-row reveal">
+      <a href="keel-landing.html#get" class="btn-primary">Download Keel <span class="px">free</span></a>
+      <a href="keel-landing.html" class="btn-ghost">Back to home →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>Keel · turn an idea into a finished app</div>
+    <div><a href="keel-landing.html">Home</a> · <a href="#">@yourhandle</a></div>
+  </div>
+</footer>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
