@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Keel — agent scaffolding for Next.js + FastAPI + Supabase</title>
+<title>Keel — turn your idea into an app, no coding required</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -211,8 +211,8 @@
     Keel
   </div>
   <div class="nav-links">
-    <a href="#problem">The problem</a>
-    <a href="#inside">What's inside</a>
+    <a href="#problem">Why Keel</a>
+    <a href="#inside">What it does</a>
     <a href="keel-quickstart.html">Quickstart</a>
     <a href="#get">Get it</a>
     <a href="#get" class="nav-cta">Download free →</a>
@@ -222,16 +222,16 @@
 <header>
   <div class="glow"></div>
   <div class="wrap hero-inner">
-    <div class="kicker reveal in">Agent scaffolding kit · Next.js 14 + FastAPI + Supabase</div>
-    <h1 class="reveal in d1">Your AI coding agent <span class="dim">isn't the problem.</span> Your repo never told it <span class="hot">the rules.</span></h1>
-    <p class="sub reveal in d2">Point Claude Code or Cursor at a bare repo and it sprawls — wrong conventions, duplicated patterns, files in the wrong place. <b>Keel is the missing layer:</b> a battle-tested <span class="mono">AGENTS.md</span>, doc templates, and skill packs that make your agent write on-convention code from the first prompt.</p>
+    <div class="kicker reveal in">Build an app with AI · no coding required</div>
+    <h1 class="reveal in d1">You've got the app idea. <span class="hot">Keel builds it for you.</span></h1>
+    <p class="sub reveal in d2">Describe what you want in plain words and let your AI assistant do the rest. <b>Keel is the free kit that hands the assistant everything it needs</b> to turn your idea into a real, working app — no code, no setup, no jargon.</p>
     <div class="cta-row reveal in d3">
       <a href="#get" class="btn-primary">Download Keel <span class="price">free</span></a>
       <a href="#inside" class="btn-ghost">See what's inside →</a>
     </div>
     <div class="trust reveal in d4">
       <span><i class="dot"></i> Free &amp; open</span>
-      <span><i class="dot"></i> No sign-up</span>
+      <span><i class="dot"></i> No coding needed</span>
       <span><i class="dot"></i> Works with Claude Code, Cursor &amp; Antigravity</span>
     </div>
   </div>
@@ -240,33 +240,31 @@
 <section id="problem">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="kicker">The tax you're already paying</div>
-      <h2>Same prompt. Two completely different repos.</h2>
-      <p>The agent isn't dumb — it just has no idea how <em>your</em> project is supposed to look. So it guesses, and you spend the session re-steering instead of shipping.</p>
+      <div class="kicker">Why you need it</div>
+      <h2>Same idea. Very different results.</h2>
+      <p>Ask an AI to build your app on its own and it has to guess how — so you often get something confusing or half-working, and it asks you questions you can't answer. Keel gives it the missing know-how.</p>
     </div>
     <div class="ba">
       <div class="panel reveal d1">
-        <div class="panel-bar"><span class="tl"><i></i><i></i><i></i></span> bare repo + "build the auth flow" <span class="panel-tag tag-bad">without keel</span></div>
+        <div class="panel-bar"><span class="tl"><i></i><i></i><i></i></span> "build my water tracker" <span class="panel-tag tag-bad">without keel</span></div>
         <div class="filetree">
-          <div class="bad">utils/helpers.js <span class="f">— 400 lines, does everything</span></div>
-          <div class="bad ind">authStuff.ts</div>
-          <div class="bad ind">login_handler.py <span class="f">— new pattern, again</span></div>
-          <div class="bad ind">components/LoginForm2.tsx</div>
-          <div class="bad ind">api/route-final-FINAL.ts</div>
-          <div class="bad">supabase calls inline, no layer</div>
-          <span class="note">// 3 re-prompts later, you fix it by hand</span>
+          <div class="bad">The AI guesses how to build it</div>
+          <div class="bad">Picks random tools and patterns</div>
+          <div class="bad">Some features don't work</div>
+          <div class="bad">Asks you technical questions</div>
+          <div class="bad">You get stuck, unsure what's wrong</div>
+          <span class="note">// and you can't tell it how to fix it</span>
         </div>
       </div>
       <div class="panel reveal d2">
-        <div class="panel-bar"><span class="tl"><i></i><i></i><i></i></span> keel repo + "build the auth flow" <span class="panel-tag tag-good">with keel</span></div>
+        <div class="panel-bar"><span class="tl"><i></i><i></i><i></i></span> "build my water tracker" <span class="panel-tag tag-good">with keel</span></div>
         <div class="filetree">
-          <div class="good">app/(auth)/login/page.tsx</div>
-          <div class="good ind">lib/auth/session.ts</div>
-          <div class="good ind">server/routers/auth.py <span class="f">— matches convention</span></div>
-          <div class="good ind">lib/supabase/client.ts <span class="f">— uses the data layer</span></div>
-          <div class="good">tests scaffolded, types shared</div>
-          <div class="good">docs updated automatically</div>
-          <span class="note">// shipped on the first prompt</span>
+          <div class="good">The AI already knows how to build it right</div>
+          <div class="good">Confirms your idea in plain words</div>
+          <div class="good">Builds the whole thing for you</div>
+          <div class="good">Checks the main features actually work</div>
+          <div class="good">Hands you a finished app</div>
+          <span class="note">// done — just open it and use it</span>
         </div>
       </div>
     </div>
@@ -276,15 +274,15 @@
 <section id="inside">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="kicker">What's in the box</div>
-      <h2>Everything an agent needs to act like it's been on your team a week.</h2>
+      <div class="kicker">Why it works</div>
+      <h2>What Keel does for you.</h2>
     </div>
     <div class="grid">
-      <div class="card reveal d1"><div class="num">01</div><h3>A tuned AGENTS.md</h3><p>The core file — conventions, boundaries, and do/don't rules the agent actually follows. Commented so you can adapt it to your project in minutes.</p></div>
-      <div class="card reveal d2"><div class="num">02</div><h3>LLM-ready doc templates</h3><p>PRD, architecture, and conventions docs structured the way agents parse best — so context lands instead of getting ignored.</p></div>
-      <div class="card reveal d3"><div class="num">03</div><h3>Example skill packs</h3><p>Ready patterns for auth, the data layer, API routes, and deploy — drop-in references the agent can mirror across the codebase.</p></div>
-      <div class="card reveal d4"><div class="num">04</div><h3>The wired starter repo</h3><p>Next.js 14 + FastAPI + Supabase, pre-structured so the conventions aren't theoretical — they're already running.</p></div>
-      <div class="card wide reveal d5"><div class="num">05</div><h3>The prompt playbook</h3><p>A short, no-fluff guide to driving Claude Code and Cursor cleanly with this scaffolding — the prompts and the order that keep output consistent across a whole feature.</p></div>
+      <div class="card reveal d1"><div class="num">01</div><h3>Speaks plain English</h3><p>You never see code or settings. You describe what you want in everyday words, and Keel handles all the technical parts behind the scenes.</p></div>
+      <div class="card reveal d2"><div class="num">02</div><h3>Knows how to build it right</h3><p>Keel comes with the know-how a good developer would have — so your AI assistant follows a proven plan instead of guessing.</p></div>
+      <div class="card reveal d3"><div class="num">03</div><h3>Picks the right tools for you</h3><p>Website, small app, or script — Keel chooses what fits your idea. You never have to decide, or even know what the options are.</p></div>
+      <div class="card reveal d4"><div class="num">04</div><h3>Checks that it works</h3><p>Before handing your app over, Keel runs it and makes sure the main things actually do what you asked.</p></div>
+      <div class="card wide reveal d5"><div class="num">05</div><h3>Works with the assistant you already use</h3><p>Claude Code, Cursor, or Antigravity — whichever one you like. Keel fits right in, with no extra tools to learn.</p></div>
     </div>
   </div>
 </section>
@@ -308,7 +306,7 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <div class="kicker">Get it</div>
-      <h2>One file changed your agent. The whole kit is yours, free.</h2>
+      <h2>The whole kit is yours, free.</h2>
     </div>
     <div class="pricing">
       <div class="price-card feature reveal d1">
@@ -316,18 +314,18 @@
         <div class="pc-price">Free <small>/ forever</small></div>
         <div class="pc-desc">The entire thing. No paywall, no trial, no catch.</div>
         <ul>
-          <li>The full tuned AGENTS.md</li>
-          <li>All PRD / architecture / conventions templates</li>
-          <li>Every skill pack (auth, data, API, deploy)</li>
-          <li>The wired Next.js + FastAPI + Supabase starter</li>
-          <li>The prompt playbook + updates</li>
+          <li>Everything your AI assistant needs to build your app</li>
+          <li>Works for websites, small apps, and scripts</li>
+          <li>A plain-language start guide and walkthrough</li>
+          <li>Works with Claude Code, Cursor, and Antigravity</li>
+          <li>Free updates, forever</li>
         </ul>
         <a href="#" class="pc-btn solid">Download Keel — free</a>
       </div>
       <div class="price-card reveal d2">
         <div class="pc-name">Why free?</div>
-        <div class="pc-price" style="font-size:26px;line-height:1.3;margin-top:16px">Because good scaffolding should be the default.</div>
-        <div class="pc-desc" style="margin-top:14px">Take it, ship with it, make it yours. If it saves you a weekend, tell one other dev — that's the only ask.</div>
+        <div class="pc-price" style="font-size:26px;line-height:1.3;margin-top:16px">Because building your idea shouldn't take a CS degree.</div>
+        <div class="pc-desc" style="margin-top:14px">Take it, build with it, make it yours. If it helps you, tell one other person — that's the only ask.</div>
         <a href="#" class="pc-btn outline" style="margin-top:auto">Browse the source →</a>
       </div>
     </div>
@@ -341,19 +339,19 @@
       <h2>The fair ones.</h2>
     </div>
     <div class="reveal d1">
-      <details><summary>Does this only work with Next.js + FastAPI + Supabase?</summary><p>That's the stack the starter is wired for, but the AGENTS.md, doc templates, and prompt playbook are stack-agnostic — the conventions approach transfers to any project.</p></details>
-      <details><summary>Which agents does it support?</summary><p>Built and tested with Claude Code and Cursor. Anything that reads an AGENTS.md-style context file benefits.</p></details>
-      <details><summary>Isn't this just a prompt I could write myself?</summary><p>You could — the same way you could write your own ESLint config. Keel is the version that's already been through the trial-and-error on real projects, so you skip the part where you learn what doesn't work.</p></details>
-      <details><summary>Do I get updates?</summary><p>Yes. It's free, and so are the updates as the agents and the stack evolve.</p></details>
-      <details><summary>It's free — what's the catch?</summary><p>None. Use it in personal or commercial projects, no attribution required. If it saves you time, passing it to another dev is thanks enough.</p></details>
+      <details><summary>Do I need to know how to code?</summary><p>No — that's the whole point. You describe what you want in plain words and your AI assistant builds it. You never touch code or settings unless you want to.</p></details>
+      <details><summary>What if the app isn't quite what I meant?</summary><p>Keel shows you its plan in plain language before it builds, so you can fix it early. And once it's built, you can just say what you'd like changed.</p></details>
+      <details><summary>What do I need to install?</summary><p>Just one AI coding assistant — Claude Code, Cursor, or Antigravity. Keel itself is a free folder you open with it.</p></details>
+      <details><summary>Which assistants does it work with?</summary><p>Claude Code, Cursor, and Antigravity. Pick whichever one you prefer — Keel works the same with all of them.</p></details>
+      <details><summary>Is it really free?</summary><p>Yes. Use it for personal or commercial projects, no sign-up, no attribution required. If it helps you, passing it to a friend is thanks enough.</p></details>
     </div>
   </div>
 </section>
 
 <section class="closer">
   <div class="wrap">
-    <h2 class="reveal">Stop re-steering.<br>Start shipping.</h2>
-    <p class="reveal d1">Give your agent the rules once. Get a senior-dev codebase out the other side.</p>
+    <h2 class="reveal">That's it.<br>Bring an idea.</h2>
+    <p class="reveal d1">Describe what you want. Keel builds it, checks it works, and hands you a finished app.</p>
     <div class="cta-row reveal d2">
       <a href="#get" class="btn-primary">Download Keel <span class="price">free</span></a>
       <a href="#inside" class="btn-ghost">See what's inside →</a>
@@ -363,7 +361,7 @@
 
 <footer>
   <div class="wrap">
-    <div>Keel · built by an indie dev who got tired of re-explaining the repo</div>
+    <div>Keel · turn your idea into a finished app</div>
     <div><a href="#">@yourhandle</a> · <a href="#">support@keel.dev</a></div>
   </div>
 </footer>
