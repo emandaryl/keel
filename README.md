@@ -12,7 +12,6 @@
 - [Repository Structure](#-repository-structure)
 - [Supported Assistants](#-supported-assistants)
 - [Inside the Keel Kit](#-inside-the-keel-kit)
-- [Getting Started](#-getting-started)
 - [License](#-license)
 
 ---
@@ -72,19 +71,6 @@ The `keel/` template directory contains the following layout:
 *   `AGENTS.md` — The single source of truth at the project root that guides the assistant (autonomously chooses Next.js/Supabase, HTML/CSS/JS, FastAPI, Python, or Flutter depending on your project type).
 *   `CLAUDE.md`, `GEMINI.md`, `.cursor/`, `.github/` — Thin adapters pointing back to `AGENTS.md` to prevent instruction drift across different tools.
 *   `docs/` — Standardized folder structure including `CONVENTIONS.md`, `ARCHITECTURE.md`, `PRD.md`, `SETUP.md`, `TESTING.md`, `DECISIONS.md`, and `USAGE.md` to keep the assistant's progress organized.
-
----
-
-## 🚀 Getting Started
-
-To explore the landing pages locally:
-1. Open [keel-landing.html](file:///Users/emandaryl/Developer/Personal/keel/keel-landing.html) in your web browser.
-2. Click **Quickstart** or open [keel-quickstart.html](file:///Users/emandaryl/Developer/Personal/keel/keel-quickstart.html) to see the step-by-step flow.
-
-To build an app using Keel:
-1. Copy the `keel/` directory to a new folder on your computer.
-2. Open that folder with your AI coding assistant.
-3. Follow the instructions in `START-HERE.md`.
 
 ---
 
