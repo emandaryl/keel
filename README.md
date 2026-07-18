@@ -1,8 +1,8 @@
 # Keel
 
-> **"Your AI coding agent isn't the problem. Your repo never told it the rules."**
+> **"Turn your idea into a finished app — no coding required."**
 
-**Keel** is a developer-tooling product and AI-coding-agent scaffolding kit optimized for the **Next.js 14 + FastAPI + Supabase** stack. It enables anyone—from first-year IT students and non-technical founders to experienced developers—to turn a plain-English idea into a fully working application using modern AI coding assistants, with zero initial setup, configuration, or technical overhead.
+**Keel** is a free developer-tooling product and AI-coding-agent scaffolding kit. It enables anyone—from non-technical founders and students to experienced creators—to turn a plain-English idea into a fully working application, website, or script using modern AI coding assistants, with zero initial setup, configuration, or technical overhead.
 
 ---
 
@@ -11,7 +11,7 @@
 - [How It Works](#-how-it-works)
 - [Repository Structure](#-repository-structure)
 - [Supported Assistants](#-supported-assistants)
-- [Inside the Keel Kit (`keel.zip`)](#-inside-the-keel-kit-keelzip)
+- [Inside the Keel Kit](#-inside-the-keel-kit)
 - [Getting Started](#-getting-started)
 - [License](#-license)
 
@@ -21,7 +21,7 @@
 
 Keel solves a common problem: when you ask an AI coding assistant to build an app from scratch, it often guesses the architecture, makes suboptimal choices, asks you technical questions you might not know how to answer, and delivers a half-working product. 
 
-Keel acts as a **pre-baked knowledge injection** for your assistant. By providing a strict structure, conventions, and pre-filled instructions, Keel guides your AI assistant to build your app using a proven, robust tech stack (Next.js 14 + FastAPI + Supabase) without you ever seeing a line of config or code.
+Keel acts as a **pre-baked knowledge injection** for your assistant. By providing a strict structure, conventions, and pre-filled instructions, Keel guides your AI assistant to build your app using a proven, robust tech stack matching your idea, without you ever seeing a line of config or code.
 
 ---
 
@@ -49,8 +49,8 @@ This repository contains the marketing pages, documentation, and the packaged ki
 
 *   **[keel-landing.html](file:///Users/emandaryl/Developer/Personal/keel/keel-landing.html):** The interactive, highly polished landing page introducing Keel, its benefits, features, and pricing.
 *   **[keel-quickstart.html](file:///Users/emandaryl/Developer/Personal/keel/keel-quickstart.html):** A step-by-step setup guide with a detailed walkthrough of a real conversation building a water-tracker application.
-*   **[KEEL_CONTEXT.md](file:///Users/emandaryl/Developer/Personal/keel/KEEL_CONTEXT.md):** The project context, guidelines, and handoff document detailing the internal design, architecture, and future product goals.
-*   **[keel.zip](file:///Users/emandaryl/Developer/Personal/keel/keel.zip):** The packaged scaffolding kit containing the empty documents skeleton, rules, and adapters that the AI assistant reads when building apps.
+*   **[keel/](file:///Users/emandaryl/Developer/Personal/keel/keel):** The actual scaffolding template containing the empty skeleton, agent instructions, conventions, and rules.
+*   **[KEEL_CONTEXT.md](file:///Users/emandaryl/Developer/Personal/keel/KEEL_CONTEXT.md):** The project context, guidelines, and handoff document (Note: This contains developer-oriented notes and legacy architecture guidelines).
 *   **[.gitignore](file:///Users/emandaryl/Developer/Personal/keel/.gitignore):** System file configuration to exclude local metadata.
 
 ---
@@ -64,13 +64,14 @@ Keel is designed to work seamlessly with the AI coding tools you already use:
 
 ---
 
-## 📦 Inside the Keel Kit (`keel.zip`)
+## 📦 Inside the Keel Kit (`keel/`)
 
-The downloadable `keel.zip` file unpacks into the following layout:
-*   `AGENTS.md` — The single source of truth at the project root that guides the assistant.
+The `keel/` template directory contains the following layout:
+*   `START-HERE.md` — The entrypoint guide for bootstrap prompts.
+*   `QUICKSTART.md` — Step-by-step walkthrough of a worked conversation.
+*   `AGENTS.md` — The single source of truth at the project root that guides the assistant (autonomously chooses Next.js/Supabase, HTML/CSS/JS, FastAPI, Python, or Flutter depending on your project type).
 *   `CLAUDE.md`, `GEMINI.md`, `.cursor/`, `.github/` — Thin adapters pointing back to `AGENTS.md` to prevent instruction drift across different tools.
-*   `docs/` — Standardized folder structure including `CONVENTIONS.md`, `ARCHITECTURE.md`, `SETUP.md`, `TESTING.md`, and `DECISIONS.md`.
-*   `SKILL.md` — Example reusable capabilities for the agent.
+*   `docs/` — Standardized folder structure including `CONVENTIONS.md`, `ARCHITECTURE.md`, `PRD.md`, `SETUP.md`, `TESTING.md`, `DECISIONS.md`, and `USAGE.md` to keep the assistant's progress organized.
 
 ---
 
@@ -79,6 +80,11 @@ The downloadable `keel.zip` file unpacks into the following layout:
 To explore the landing pages locally:
 1. Open [keel-landing.html](file:///Users/emandaryl/Developer/Personal/keel/keel-landing.html) in your web browser.
 2. Click **Quickstart** or open [keel-quickstart.html](file:///Users/emandaryl/Developer/Personal/keel/keel-quickstart.html) to see the step-by-step flow.
+
+To build an app using Keel:
+1. Copy the `keel/` directory to a new folder on your computer.
+2. Open that folder with your AI coding assistant.
+3. Follow the instructions in `START-HERE.md`.
 
 ---
 
