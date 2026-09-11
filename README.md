@@ -68,9 +68,9 @@ Keel is designed to work seamlessly with the AI coding tools you already use:
 The `keel/` template directory contains the following layout:
 *   `START-HERE.md` — The entrypoint guide for bootstrap prompts.
 *   `QUICKSTART.md` — Step-by-step walkthrough of a worked conversation.
-*   `AGENTS.md` — The single source of truth at the project root that guides the assistant (autonomously chooses Next.js/Supabase, HTML/CSS/JS, FastAPI, Python, or Flutter depending on your project type).
+*   `AGENTS.md` — The single source of truth at the project root that guides the assistant (autonomously verifies tools and chooses a local-first stack matching your project type).
 *   `CLAUDE.md`, `GEMINI.md`, `.cursor/`, `.github/` — Thin adapters pointing back to `AGENTS.md` to prevent instruction drift across different tools.
-*   `docs/` — Standardized folder structure including `CONVENTIONS.md`, `ARCHITECTURE.md`, `PRD.md`, `SETUP.md`, `TESTING.md`, `DECISIONS.md`, and `USAGE.md` to keep the assistant's progress organized.
+*   `docs/` — Standardized folder structure including `CONVENTIONS.md`, `ARCHITECTURE.md`, `PRD.md`, and `USAGE.md` to keep the assistant's progress organized.
 
 ---
 

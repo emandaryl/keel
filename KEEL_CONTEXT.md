@@ -1,7 +1,14 @@
-# KEEL — Project Context & Handoff
+# KEEL — Project Context & Handoff [SUPERSEDED / HISTORICAL]
+
+> [!NOTE]
+> **SUPERSEDED ARCHITECTURE ARCHIVE (Historical Reference Only)**
+> The single-stack, paid-product plan described below (Next.js 14 + FastAPI + Supabase) has been superseded.
+> Keel has pivoted to a **free, multi-stack scaffolding kit** designed for non-technical creators, featuring local-first defaults and autonomous stack selection without user configuration.
+> The canonical live documentation is in [README.md](README.md) and [keel/AGENTS.md](keel/AGENTS.md).
+> This document is retained solely for historical background and design lineage.
 
 > Handoff document for Claude Code. Compiled 2026-07-15 from planning sessions in claude.ai.
-> Read this fully before doing any work on the project.
+> Historical reference only — do not use as active spec.
 
 ---
 

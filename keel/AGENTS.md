@@ -19,9 +19,8 @@ them as possible. Follow this file exactly.
    short batch of plain-language questions, then stop and wait.
 2. CONFIRM (once) — Restate what you'll build in plain language: the main things
    the app will do. Wait for a yes or a tweak. No technical terms.
-3. CHOOSE THE SETUP (do not ask the user) — Pick a sensible stack yourself from
-   the defaults below, based on what fits the idea. Record the idea in
-   docs/PRD.md.
+3. CHOOSE THE SETUP (do not ask the user) — Pick a sensible stack yourself based
+   on the idea and what tools are installed. Record the idea in docs/PRD.md.
 4. BUILD — Build the whole thing autonomously, following the conventions below.
    Do not check in per task.
 5. TEST (basic) — Run the app and exercise the core features the user asked for.
@@ -31,13 +30,34 @@ them as possible. Follow this file exactly.
 6. DELIVER — Tell the user, in plain language, exactly what to open or click to
    see their finished app and what it can do. Fill in docs/USAGE.md for them.
 
-## Default stacks — you pick, based on the idea (never ask the user)
-- Website / web app            -> Next.js + Supabase
-- Simple static page           -> plain HTML / CSS / JS
-- API or backend service only  -> FastAPI (Python)
-- Script / automation / data   -> Python
-- Mobile app                   -> Flutter
+## Choosing the stack & data storage (never ask the user)
+
+### Toolchain verification (zero-dependency fallback)
+Before committing to any stack that requires external runtimes or build tools
+(Node.js, Python, Flutter, etc.), verify that the required binaries are installed
+and operational. If a tool is missing or fails, NEVER prompt the user to install
+or configure anything. Instead, autonomously fall back to the zero-dependency option:
+- Static HTML5 / CSS3 / Vanilla JavaScript — runs natively in any browser with
+  zero installation or setup.
+
+### Stack selection heuristic
+Pick the simplest setup that fits the idea:
+- Interactive website or web app -> Next.js / React (if Node is present) or single-page HTML/CSS/JS (fallback)
+- Simple static page            -> plain HTML / CSS / JS
+- API or backend service only   -> FastAPI (Python, if Python is present)
+- Script / automation / data    -> Python (if Python is present)
+- Mobile app                    -> Flutter (if Flutter SDK is present) or mobile-optimized responsive web app (fallback)
 Choose the simplest option that fits. Prefer free, easy-to-run defaults.
+
+### Data storage heuristic: local-first by default
+- Always default to local-first storage that requires zero accounts, API keys, or
+  cloud setup:
+  - In-browser apps: `localStorage` or `IndexedDB`
+  - Backend / server apps: `SQLite` (local file database)
+- Only escalate to a hosted backend (e.g. Supabase) when the user's idea clearly
+  requires cross-device multi-user persistence or cloud login. When required,
+  autonomously provision and configure it yourself; NEVER ask the user to supply
+  cloud credentials, project URLs, or API keys.
 
 ## Conventions
 - Use a clean, conventional folder structure for the chosen stack.
