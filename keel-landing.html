@@ -140,6 +140,19 @@
   .filetree .ind{padding-left:20px}
   .filetree .note{display:block;margin-top:14px;font-size:11.5px;color:var(--muted-2);letter-spacing:.02em}
 
+  /* first-reply comparison */
+  .chat-compare{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+  .chat-compare .chat-body{padding:18px 16px;display:flex;flex-direction:column;gap:12px;flex:1}
+  .cmsg{padding:12px 14px;border-radius:12px;font-size:14px;line-height:1.55}
+  .cmsg .who{display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;opacity:.7}
+  .cmsg.you{background:var(--surface-2);border:1px solid var(--line)}
+  .cmsg.you .who{color:var(--muted)}
+  .cmsg.ai-bad{background:transparent;border:1px dashed var(--bad);color:var(--muted)}
+  .cmsg.ai-bad .who{color:var(--bad)}
+  .cmsg.ai-good{background:var(--accent-soft);border:1px solid var(--accent)}
+  .cmsg.ai-good .who{color:var(--accent)}
+  .chat-note{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted-2);padding:0 16px 16px;letter-spacing:.02em}
+
   /* WHAT'S INSIDE */
   .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
   @media(max-width:760px){.grid{grid-template-columns:1fr}}
@@ -268,6 +281,28 @@
         </div>
       </div>
     </div>
+    <div class="sec-head reveal" style="margin-top:52px">
+      <h3 style="font-size:19px;font-weight:600;color:var(--text)">The exact moment it usually breaks.</h3>
+      <p style="margin-top:8px">Frontier AI is tuned to talk to other engineers. Left alone, its very first reply already assumes you know what an App Router is.</p>
+    </div>
+    <div class="ba">
+      <div class="chat-compare reveal d1">
+        <div class="panel-bar"><span class="tl"><i></i><i></i><i></i></span> first reply <span class="panel-tag tag-bad">without keel</span></div>
+        <div class="chat-body">
+          <div class="cmsg you"><span class="who">You</span>I want a daily water tracker.</div>
+          <div class="cmsg ai-bad"><span class="who">AI</span>Great! Should we build this with Next.js App Router, Vite + React, or Vue? Tailwind CSS or styled-components? For the database — Prisma with PostgreSQL, or a Supabase backend?</div>
+        </div>
+        <div class="chat-note">// you don't know what any of that means — so the project stalls right here</div>
+      </div>
+      <div class="chat-compare reveal d2">
+        <div class="panel-bar"><span class="tl"><i></i><i></i><i></i></span> first reply <span class="panel-tag tag-good">with keel</span></div>
+        <div class="chat-body">
+          <div class="cmsg you"><span class="who">You</span>I want a daily water tracker.</div>
+          <div class="cmsg ai-good"><span class="who">Keel</span>Got it. I'll build an app where you log how many glasses of water you drink each day, with a 7-day chart. Sound right?</div>
+        </div>
+        <div class="chat-note">// one plain-English question, then it just builds</div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -344,6 +379,7 @@
       <details><summary>What do I need to install?</summary><p>Just one AI coding assistant — Claude Code, Cursor, or Antigravity. Keel itself is a free folder you open with it.</p></details>
       <details><summary>Which assistants does it work with?</summary><p>Claude Code, Cursor, and Antigravity. Pick whichever one you prefer — Keel works the same with all of them.</p></details>
       <details><summary>Is it really free?</summary><p>Yes. Use it for personal or commercial projects, no sign-up, no attribution required. If it helps you, passing it to a friend is thanks enough.</p></details>
+      <details><summary>Why not just use Claude Code or Antigravity directly?</summary><p>You can — they're smart enough to build almost anything. What they're not tuned for is a first-time, non-technical user: left alone, they'll often default to a cloud database and hand you a connection string you can't fill in, assume you have developer tools installed and stall out if you don't, check in with you at every small step instead of just finishing, and forget everything about your app the moment you start a new session. Keel is the set of rules that keeps them building for you instead of for another engineer — local-first by default, graceful fallbacks when a tool's missing, one confirmation instead of constant check-ins, and a memory of your app so next time you ask for a change, it already knows the context.</p></details>
     </div>
   </div>
 </section>
