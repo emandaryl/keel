@@ -142,7 +142,7 @@
 
   /* first-reply comparison */
   .chat-compare{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
-  .chat-compare .chat-body{padding:18px 16px;display:flex;flex-direction:column;gap:12px;flex:1}
+  .chat-compare .chat-body{padding:18px 16px;display:flex;flex-direction:column;gap:12px;flex:1;justify-content:center}
   .cmsg{padding:12px 14px;border-radius:12px;font-size:14px;line-height:1.55}
   .cmsg .who{display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;opacity:.7}
   .cmsg.you{background:var(--surface-2);border:1px solid var(--line)}
@@ -282,12 +282,12 @@
       </div>
     </div>
     <div class="sec-head reveal" style="margin-top:52px">
-      <h3 style="font-size:19px;font-weight:600;color:var(--text)">The exact moment it usually breaks.</h3>
+      <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:22px;letter-spacing:-.01em;color:var(--text)">The exact moment it usually breaks.</h3>
       <p style="margin-top:8px">Frontier AI is tuned to talk to other engineers. Left alone, its very first reply already assumes you know what an App Router is.</p>
     </div>
     <div class="ba">
       <div class="chat-compare reveal d1">
-        <div class="panel-bar"><span class="tl"><i></i><i></i><i></i></span> first reply <span class="panel-tag tag-bad">without keel</span></div>
+        <div class="panel-bar"><span class="tl"><i></i><i></i><i></i></span> "build my water tracker" <span class="panel-tag tag-bad">without keel</span></div>
         <div class="chat-body">
           <div class="cmsg you"><span class="who">You</span>I want a daily water tracker.</div>
           <div class="cmsg ai-bad"><span class="who">AI</span>Great! Should we build this with Next.js App Router, Vite + React, or Vue? Tailwind CSS or styled-components? For the database — Prisma with PostgreSQL, or a Supabase backend?</div>
@@ -295,7 +295,7 @@
         <div class="chat-note">// you don't know what any of that means — so the project stalls right here</div>
       </div>
       <div class="chat-compare reveal d2">
-        <div class="panel-bar"><span class="tl"><i></i><i></i><i></i></span> first reply <span class="panel-tag tag-good">with keel</span></div>
+        <div class="panel-bar"><span class="tl"><i></i><i></i><i></i></span> "build my water tracker" <span class="panel-tag tag-good">with keel</span></div>
         <div class="chat-body">
           <div class="cmsg you"><span class="who">You</span>I want a daily water tracker.</div>
           <div class="cmsg ai-good"><span class="who">Keel</span>Got it. I'll build an app where you log how many glasses of water you drink each day, with a 7-day chart. Sound right?</div>
